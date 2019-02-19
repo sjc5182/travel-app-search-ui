@@ -6,8 +6,8 @@ const DeltaTicket = () => (
     <div className = "inner-border-top-right"></div>
     <div className = "inner-border-middle-left"></div>
     <div className = "inner-border-middle-right"></div>
-    <img className = "inner-border-bottom-left" src = "http://www.deltamuseum.org/images/site/history-logo/current_widget.jpg?sfvrsn=71bfda21_2" />
-    <img className = "inner-border-bottom-right" src = "http://www.deltamuseum.org/images/site/history-logo/current_widget.jpg?sfvrsn=71bfda21_2" ></img>
+    <img className = "inner-border-bottom-left" src = "https://s1.apideeplink.com/images/airlines/UA.png" />
+    <img className = "inner-border-bottom-right" src = "https://s1.apideeplink.com/images/airlines/UA.png" ></img>
   </div>
 );
 export default DeltaTicket;
