@@ -24,6 +24,15 @@ module.exports = (env) => {
           'css-loader',
           'less-loader'
         ]
+    }, {
+      test: /\.(png|jpg|gif)$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+          }
+        }
+      ]
     }]
   },
   plugins: isProduction ? [ new MiniCssExtractPlugin()] : [],
