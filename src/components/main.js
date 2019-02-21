@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Quotes from '../constructor/Quotes';
 import Delta from './airlines/delta';
+import LeftBar from './side-bars/left-bar';
 
 class Main extends React.Component {
   constructor(props){
@@ -27,8 +28,8 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>Hello this is my Main Page</p>
+      <div className = "main-page-style">
+        <LeftBar />
         <Delta test = {this.state.quotes}/>
       </div>
     );
