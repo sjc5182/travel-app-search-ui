@@ -4,6 +4,7 @@ import Quotes from '../constructor/Quotes';
 import LogoBar from './side-bars/logo-bar';
 import TopBar from './side-bars/top-bar';
 import Delta from './airlines/delta';
+import LeftBar from './side-bars/left-bar';
 
 class Main extends React.Component {
   constructor(props){
@@ -29,10 +30,15 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div className = "main-page-style">
+      <div className = "main-page-column-setting">
         <LogoBar />
-        <TopBar />
-        <Delta test = {this.state.quotes}/>
+        <div className = "main-rows-setting">
+          <LeftBar />
+          <div className = "main-contents-column-setting">
+            <TopBar />
+            <Delta test = {this.state.quotes}/>
+          </div>
+        </div>
       </div>
     );
   }
