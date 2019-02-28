@@ -2,7 +2,8 @@ import React from 'react';
 
 const LogoBar = () => (
   <div className = "logo-bar-container">
-    <span>Logo Bar</span>
+    <div className = "logo-plane" />
+    <div className = "logo-lookup" />
   </div>
 )
 
