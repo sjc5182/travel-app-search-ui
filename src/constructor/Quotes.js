@@ -5,8 +5,9 @@ class Quotes{
     this.Departure = Departure;
     this.Arrival = Arrival;
     this.Carriers = Carriers;
+    this.segments
   }
-  static legs(itinerary, leg) {
+  static legs(itinerary, leg, segments) {
     let newQuoteArray = []
     for(let i = 0; i<leg.length; i++){
       if(itinerary[i].OutboundLegId===leg[i].Id)
