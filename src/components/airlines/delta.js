@@ -45,8 +45,6 @@ const DeltaTicket = (props) => (
       <img className = "inner-border-bottom-right" src = "http://www.logospng.com/images/131/delta-air-lines-logo-png-transparent-pngpix-131573.png" />
     </div>
   </div>
-
-
 // {props.test.map(quote => 
 //   <div className="outer-border">
 //   <div className = "inner-border-top-left">

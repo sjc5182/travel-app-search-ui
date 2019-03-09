@@ -14,66 +14,53 @@ class Main extends React.Component {
     }
   }
 
-componentDidMount(){
-  const config = {
-     headers: {'X-RapidAPI-Key': '9582c9a04bmsh38417e4edecff7dp13f60djsn521655bbeed3'}
+  segmentTest(legs, segments) {
+    let count = [];
+    let arraySegment = [];
+    for(let i = 0; i < legs.length; i++){
+      count.push(legs[i].SegmentIds.length);
+      for(let j = 0; j < legs[i].SegmentIds.length; j++){
+        segments.forEach(id => {
+          if(id.Id === legs[i].SegmentIds[j]){
+            arraySegment.push(id)
+          }
+        })
+      }
+    }
+    return [arraySegment, count];
+  };
+
+  componentDidMount(){
+    const config = {
+      headers: {'X-RapidAPI-Key': '9582c9a04bmsh38417e4edecff7dp13f60djsn521655bbeed3'}
     };
-     axios.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/85bf3935-f434-4547-b2e8-3479361d038d", config)
+    axios.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/32139e3f-3260-4062-9466-39eac160ef4e", config)
     .then((result) => {
-      let arrayLegs = [];
-      let arraySegment = [];
-      let itineraries = result.data.Itineraries;
       let legs = result.data.Legs;
       let segments = result.data.Segments;
-      for(let i = 0; i < legs.length; i++){
-        for(let j = 0; j < legs[i].SegmentIds.length; j++){
-          segments.forEach(id => {
-            if(id.Id === legs[i].SegmentIds[j]){
-              console.log("hello");
-            }
-          })
+      let countSegments = this.segmentTest(legs, segments)
+      let arraySegment = countSegments[0]
+      let count = countSegments[1]
+      let arrayData = []
+      let startIndex = 0
+      let endIndex = 0
+      count.forEach(value =>{
+        if(startIndex === 0){
+          arrayData.push(arraySegment.slice(startIndex, value))
+          startIndex =+value
+          endIndex =+value
+        }else {
+          arrayData.push(arraySegment.slice(startIndex, endIndex+value))
+          startIndex = endIndex + value
+          endIndex = startIndex
         }
-      }
-      //   // legs[i].SegmentIds.forEach(idValue => {
-      //   //   arrayLegs.push(idValue);
-      //   // })
-      // }
-
-      
-
-      // for(let i = 0; i<legs.length; i++){
-      //   legs[i].SegmentIds.filter(id => {
-      //     segments.indexof()
-      //   })
-      //   console.log(legs[i].Duration);
-      // }
-
-    
-      
-
-  
-      // legs.filter(time => {
-      //   console.log(time.Duration)
-      // })
-      // this.setState({
-      //   quotes: Quotes.legs(itineraries, legs)
-      // })
+      })
+      this.setState({
+        //quotes: Quotes.legs(itineraries, legs)
+        quotes: arrayData
+      })
     });
-}
-
-  // componentDidMount(){
-  // const config = {
-  //   headers: {'X-RapidAPI-Key': '9582c9a04bmsh38417e4edecff7dp13f60djsn521655bbeed3'}
-  // };
-  // axios.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/069a5957-0617-43fd-a7bc-3ab6f3ddcd07", config)
-  //   .then((result) => {
-  //     let itineraries = result.data.Itineraries;
-  //     let legs = result.data.Legs;
-  //     this.setState({
-  //       quotes: Quotes.legs(itineraries, legs)
-  //     })
-  //   });
-  // }
+  }
 
   render() {
     return (
@@ -83,13 +70,12 @@ componentDidMount(){
           <LeftBar />
           <div className = "main-contents-column-setting">
             <TopBar />
-            <Delta test = {this.state.quotes}/>
+            <Delta segmentsFilter = {this.state.quotes}/>
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
-
 
 export default Main;
