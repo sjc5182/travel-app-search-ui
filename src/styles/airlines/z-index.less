@@ -1,0 +1,36 @@
+
+.zcontainer{
+  position: relative;
+  width: 600px;
+  height: 600px;
+  border: @border;
+  .ztest{
+    height: 100px;
+    width: 100px;
+    border: @border;
+    background-color: red;
+    position: absolute;
+    z-index: -1;
+  }
+  .ztest1{
+    height: 100px;
+    width: 100px;
+    border: @border;
+    background-color: green;
+    position: absolute;
+    top: 26px;
+    right: 466px;
+    z-index: 8;
+  }
+  .ztest2{
+    height: 100px;
+    width: 100px;
+    border: @border;
+    background-color: yellow;
+    position: absolute;
+    top: 50px;
+    right: 420px;
+    z-index: 5;
+  }
+
+}
