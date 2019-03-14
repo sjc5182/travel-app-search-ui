@@ -35,7 +35,7 @@ class Main extends React.Component {
     const config = {
       headers: {'X-RapidAPI-Key': '9582c9a04bmsh38417e4edecff7dp13f60djsn521655bbeed3'}
     };
-    axios.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/9e4cc08f-0ed3-42c5-b1f9-cf38a59bf676", config)
+    axios.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/fbffa416-8936-458d-9234-721c04db053d", config)
     .then((result) => {
       let legs = result.data.Legs;
       let segments = result.data.Segments;
