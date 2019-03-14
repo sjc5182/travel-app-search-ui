@@ -35,7 +35,7 @@ class Main extends React.Component {
     const config = {
       headers: {'X-RapidAPI-Key': '9582c9a04bmsh38417e4edecff7dp13f60djsn521655bbeed3'}
     };
-    axios.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/5cc0b217-fa4f-4892-946b-5ba45ea17a0a", config)
+    axios.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/9e4cc08f-0ed3-42c5-b1f9-cf38a59bf676", config)
     .then((result) => {
       let legs = result.data.Legs;
       let segments = result.data.Segments;
@@ -71,8 +71,7 @@ class Main extends React.Component {
           <LeftBar />
           <div className = "main-contents-column-setting">
             <TopBar />
-            {/* <Delta /> */}
-            <ZIndexTest />
+            <Delta test = { this.state.quotes }/>
           </div>
         </div>
       </div>

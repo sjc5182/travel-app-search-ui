@@ -1,38 +1,142 @@
+.parallax {
+  perspective: 1px;
+  height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.parallax__layer--base {
+  transform: translateZ(0);
+}
+.parallax__layer--back {
+  transform: translateZ(-1px);
+}
+
+
+.mainblock {
+  height: 300px;
+  width: 100vw;
+  overflow-y: auto;
+}
+
+.pageblock{
+  width: 300px;
+  height: 300px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageblock::after {
+  content: " ";
+  width: 50%;
+  height: 20%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.blockcolor1 {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: green;
+}
+.blockcolor2{
+  left: 100px;
+  right: 0;
+  top: -240px;
+  bottom: 0;
+  background: blue;
+}
+.blockcolor3 {
+  left: 200px;
+  right: 0;
+  top: -480px;
+  bottom: 0;
+  background: yellow;
+}
+
+
+
+// .intro {
+//   position: relative;
+//   display: inline-block;
+
+//   &::before,
+//   &::after {
+//     content: '';
+//     height: 100%;
+//     display: block;
+//     position: absolute;
+//   }
+//   &::before {
+//     background: green;
+//     left: -20px;
+//     right: -20px;
+//     z-index: 2;
+//   }
+
+//   &::after {
+//     background: red;
+//     width: 100vw;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     top: 0;
+//     z-index: -2;
+//   }
+// }
+
+// h1 {
+//   font-family: sans-serif;
+//   text-transform: uppercase;
+//   line-height: .9;
+//   color: #cc3311;
+// }
+
+
+
 
 .wrapper{
   background: linear-gradient(to bottom, #74ABE2, #5563DE);
-  width: 400px;
+  width: 402px;
+  height: 402px;
   .zcontainer{
-    //position: relative;
+    position: relative;
     width: 400px;
     height: 400px;
-    text-align: center;
-    overflow-x: hidden;
-    a {
-      display: inline-flex;
-      width: 1.5rem;
-      height: 1.5rem;
-      background: green;
-      text-decoration: none;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      margin: 0 0 0.5rem 0;
-      position: relative;
-    }
-     .slides{
-       background: white;
-       width: 400px;
-       height: 400px;
-       display: flex;
-       overflow: auto;
-       border-radius: 20px;
-       border: @border;
-       transform: scale(0.8);
-       position: relative;
-      .ztest1{
-        width: 100px;
-        height: 100px;
+    display: flex;
+    border: @border;
+    //position: relative;
+    // width: 400px;
+    // height: 400px;
+    // text-align: center;
+    // overflow-x: hidden;
+    // a {
+    //   display: inline-flex;
+    //   width: 1.5rem;
+    //   height: 1.5rem;
+    //   background: green;
+    //   text-decoration: none;
+    //   align-items: center;
+    //   justify-content: center;
+    //   border-radius: 50%;
+    //   margin: 0 0 0.5rem 0;
+    //   position: relative;
+    // }
+       
+      .slides1{
+        width: 400px;
+        height: 400px;
         flex-shrink: 0;
         display: flex;
         background: red;
@@ -40,72 +144,62 @@
         font-size: 100px;
         justify-content: center;
         position: absolute;
-        border:@border;
-        top: 50px;
-        right: -50px;
+        border: @border;
         z-index: -1;
       }
-      .ztest2{
-        width: 100px;
-        height: 100px;
+      .slides2{
+        width: 400px;
+        height: 400px;
         flex-shrink: 0;
         display: flex;
         background: yellow;
         align-items: center;
         font-size: 100px;
         justify-content: center;
-        border:@border;
         position: absolute;
-        top: 70px;
-        right: -70px;
+        border: @border;
         z-index: 1
       }
-      .ztest3{
-        width: 100px;
-        height: 100px;
+      .slides3{
+        width: 400px;
+        height: 400px;
         flex-shrink: 0;
         background: green;
         display: flex;
         align-items: center;
         font-size: 100px;
         justify-content: center;
-        border:@border;
         position: absolute;
-        top: 90px;
-        right: -90px;
+        border: @border;
         z-index: 3;
       }
-      .ztest4{
-        width: 100px;
-        height: 100px;
+      .slides4{
+        width: 400px;
+        height: 400px;
         flex-shrink: 0;
         display: flex;
         background: blue;
         align-items: center;
         font-size: 100px;
         justify-content: center;
-        border:@border;
         position: absolute;
-        top: 110px;
-        right: -110px;
+        border: @border;
         z-index: 5;
       }
-      .ztest5{
-        width: 100px;
-        height: 100px;
+      .slides5{
+        width: 400px;
+        height: 400px;
         flex-shrink: 0;
         display: flex;
         background: orange;
         align-items: center;
         font-size: 100px;
         justify-content: center;
-        border:@border;
         position: absolute;
-        top: 130px;
-        right: -130px;
+        border: @border;
         z-index: 7;
       }
-    }
+    
 }
 
   
