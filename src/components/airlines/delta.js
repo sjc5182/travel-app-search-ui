@@ -1,16 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import Barcode from '../../images/barcode.png';
-
-import { Container, TicketSplit } from '../styled-components/index';
-
+import TicketSplit from '../styled-components/ticketsplit';
 const DeltaTicket = (props) => {
-  return (
-    props.test.map(a => 
-      <Container>
-        <TicketSplit>
+return (
+  props.test.map(a => 
         {
-          a.map(b => 
+          a.map(b =>
             <div>
               <div className="outer-border">
                 <div className = "inner-border-top-left">
@@ -54,10 +49,9 @@ const DeltaTicket = (props) => {
                 <img className = "inner-border-bottom-right" src = "http://www.logospng.com/images/131/delta-air-lines-logo-png-transparent-pngpix-131573.png" />
               </div>
             </div>
+            
           )
         }
-        </TicketSplit>
-      </Container>
     )
   )
 }

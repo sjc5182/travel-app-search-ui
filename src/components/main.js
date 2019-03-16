@@ -6,6 +6,7 @@ import TopBar from './side-bars/top-bar';
 import Delta from './airlines/delta';
 import LeftBar from './side-bars/left-bar';
 import ZIndexTest from './side-bars/z-index-test';
+import TicketSplit from './styled-components/ticketsplit';
 
 class Main extends React.Component {
   constructor(props){
@@ -35,7 +36,7 @@ class Main extends React.Component {
     const config = {
       headers: {'X-RapidAPI-Key': '9582c9a04bmsh38417e4edecff7dp13f60djsn521655bbeed3'}
     };
-    axios.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/fbffa416-8936-458d-9234-721c04db053d", config)
+    axios.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/3028b5fc-baf4-4b93-b339-360f18163248", config)
     .then((result) => {
       let legs = result.data.Legs;
       let segments = result.data.Segments;
@@ -71,7 +72,7 @@ class Main extends React.Component {
           <LeftBar />
           <div className = "main-contents-column-setting">
             <TopBar />
-            <Delta test = { this.state.quotes }/>
+            <TicketSplit someone = { "hi" }/>
           </div>
         </div>
       </div>
