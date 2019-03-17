@@ -8,7 +8,7 @@ const TicketSplit = styled.div`
   border: 1px solid green;
   position: absolute;
   ${props => {
-        {console.log(props)}
+        {console.log(props.someone)}
 
   
     // props.ticketsCount.forEach(element => 
