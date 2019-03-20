@@ -1,25 +1,11 @@
-import styled from 'styled-components';
-import React from 'react';
+import styled, {css} from 'styled-components';
 
-
-const TicketSplit = styled.div`
-  height: 400px;
-  width: 100vw;
-  border: 1px solid green;
-  position: absolute;
-  
-  `;
-    /* //debugger;
-
-  
-    // props.ticketsCount.forEach(element => 
-    //   css` 
-    //   top: ${counterTop}px;
-    //   left: ${counterLeft}px;
-    // `
-    // ) */
-     
-    
-   
-
+const TicketSplit = styled.div.attrs({
+  style: props => ({
+  left: (props.postionLeft - 100) + "px",
+  top: (props.postionLeft - 100) + "px"
+  })
+})`
+position: absolute;
+`
 export default TicketSplit;
