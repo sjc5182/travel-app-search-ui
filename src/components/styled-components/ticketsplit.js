@@ -7,8 +7,9 @@ const TicketSplit = styled.div`
   width: 100vw;
   border: 1px solid green;
   position: absolute;
-  ${props => {
-        {console.log(props.someone)}
+  
+  `;
+    /* //debugger;
 
   
     // props.ticketsCount.forEach(element => 
@@ -16,9 +17,9 @@ const TicketSplit = styled.div`
     //   top: ${counterTop}px;
     //   left: ${counterLeft}px;
     // `
-    // )
+    // ) */
      
-    }};
+    
    
-`;
+
 export default TicketSplit;

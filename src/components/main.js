@@ -66,16 +66,17 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div className = "main-page-column-setting">
-        <LogoBar />
-        <div className = "main-rows-setting">
-          <LeftBar />
-          <div className = "main-contents-column-setting">
-            <TopBar />
-            <TicketSplit someone = { "hi" }/>
-          </div>
-        </div>
-      </div>
+      // <div className = "main-page-column-setting">
+      //   <LogoBar />
+      //   <div className = "main-rows-setting">
+      //     <LeftBar />
+      //     <div className = "main-contents-column-setting">
+      //       <TopBar />
+      //       <TicketSplit someone = { "hi" }/>
+      //     </div>
+      //   </div>
+      // </div>
+       <TicketSplit test = {"hi"}/>
     )
   }
 }

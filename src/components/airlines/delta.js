@@ -1,6 +1,6 @@
 import React from 'react';
 import Barcode from '../../images/barcode.png';
-import TicketSplit from '../styled-components/ticketsplit';
+//import TicketSplit from '../styled-components/ticketsplit';
 const DeltaTicket = (props) => {
 return (
   props.test.map(a => 
