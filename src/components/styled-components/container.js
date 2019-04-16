@@ -5,7 +5,7 @@ const Container = styled.div`
     props.heightBase===1 ? 362 + 'px' : 362+(props.heightBase-1)*70 + 'px'
   };
   width: 100vw;
-  margin: 10px 0 0 11px;
+  margin: 10px 0 0 0;
   position: relative;
 `
 export default Container 
