@@ -5,11 +5,11 @@ const TopBar = () => (
   <div className = "top-bar-container">
     <div className = "top-bar-content-info">
       <div className = 'search-label'>
-        <span>Your Info</span>
-        <span>From</span>
-        <span>To</span>
-        <span>Depart</span>
-        <span> Cabin Class & Travlers</span>
+        <span className = 'label-size'> Your Info </span>
+        <span className = 'label-size'> From </span>
+        <span className = 'label-size'> To </span>
+        <span className = 'label-size'> Depart </span>
+        <span className = 'label-size'> Cabin Class & Travlers </span>
       </div>
       <div className = 'search-input'>
         <Input size = 'large' icon = 'user' placeholder='Name' />
